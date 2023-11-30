@@ -6,6 +6,6 @@ jobs:
   sayHelloWorld:
     runs-on: ubuntu-latest
     steps:
-      - uses: repository-settings/app@v2
+      - uses: repository-settings/app@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
