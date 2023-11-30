@@ -1,0 +1,11 @@
+name: Say Hello World
+on:
+  push:
+
+jobs:
+  sayHelloWorld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: repository-settings/app@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
