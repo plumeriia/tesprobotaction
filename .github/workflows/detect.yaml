@@ -1,11 +1,18 @@
-name: Say Hello World
+name: Probot
+
 on:
   push:
 
 jobs:
-  sayHelloWorld:
+  probot:
     runs-on: ubuntu-latest
     steps:
-      - uses: repository-settings/app@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Probot
+        uses: probot/example-github-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APP_ID: ${{ secrets.APP_ID }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
